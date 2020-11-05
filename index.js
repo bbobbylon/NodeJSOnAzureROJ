@@ -16,7 +16,6 @@ router.get('/',function(req,res){
 
 
 
-
 /*
 const server = http.createServer((request, response) => {
     // Write the request to the log. 
