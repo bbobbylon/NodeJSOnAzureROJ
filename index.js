@@ -2,6 +2,20 @@ var http = require('http');
 var url = require('url');
 var dt = require('./datetime');
 
+var express = require("express"); 
+var app = express(); 
+var path = require("path"); 
+app.get('/',function(req,res){ 
+  res.sendFile(path.join(__dirname+'/index.html')); 
+  //__dirname : It will resolve to your project folder. 
+}); 
+//app.listen(3000); 
+//console.log("Server running at Port 3000");
+
+
+
+
+
 
 const server = http.createServer((request, response) => {
     // Write the request to the log. 
@@ -31,3 +45,6 @@ const port = process.env.PORT || 1337;
 server.listen(port);
 
 console.log("Server running at http://localhost:%d", port);
+
+
+
