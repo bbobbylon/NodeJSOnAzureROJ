@@ -44,8 +44,10 @@ const server = http.createServer((request, response) => {
 
 
 */
+
+app.use('/', router);
 const port = process.env.PORT || 1337;
-server.listen(port);
+app.listen(port);
 
 console.log("Server running at http://localhost:%d", port);
 
