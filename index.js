@@ -7,6 +7,7 @@ var app = express();
 var path = require("path"); 
 var router = express.Router();
 router.get('/',function(req,res){ 
+  app.use(express.static('public'));
   res.sendFile(path.join(__dirname+'/index.html')); 
   //__dirname : It will resolve to your project folder. 
 }); 
@@ -42,7 +43,7 @@ const server = http.createServer((request, response) => {
 
 
 */
-app.use(express.static('public'))
+
 app.use('/', router);
 const port = process.env.PORT || 1337;
 app.listen(port);
