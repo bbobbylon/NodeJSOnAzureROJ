@@ -5,9 +5,10 @@ var dt = require('./datetime');
 var express = require("express"); 
 var app = express(); 
 var path = require("path"); 
+app.use(express.static(path.join(__dirname, 'public')));
 var router = express.Router();
 router.get('/',function(req,res){ 
-  app.use(express.static('public'));
+  
   res.sendFile(path.join(__dirname+'/index.html')); 
   //__dirname : It will resolve to your project folder. 
 }); 
