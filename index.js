@@ -42,6 +42,7 @@ const server = http.createServer((request, response) => {
 
 
 */
+app.use(express.static('public'));
 app.use('/', router);
 const port = process.env.PORT || 1337;
 app.listen(port);
