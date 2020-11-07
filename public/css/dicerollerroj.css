@@ -1,0 +1,16 @@
+p{
+padding: 32px;
+text-decoration: wavy;
+}
+h1{
+   color:blue;
+   
+   
+}
+button{
+    color: aqua;
+}
+
+button:hover{
+    transition: width 2s, height 4s;
+}

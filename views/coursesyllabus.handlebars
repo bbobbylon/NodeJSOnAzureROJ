@@ -1,0 +1,290 @@
+<!--
+
+ Author: Robert C. Oliver, Jr. 
+
+ Class:  Software Engineering Fall 2020
+
+ Project: Lab 2 / Course Syllabus
+
+ Description: This is the first version of my Course Syllabus application and is being submitted as part of Lab 2.
+
+
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<title>ROJ's Software Engineering Course Syllabus</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- This is where we style the HTML page, no CSS file needed (given instructions)-->
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#courseSchedule" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Course Schedule</a>
+    <a href="#studentLearningOutcomes" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Student Learning Outcomes</a>
+    <a href="#courseMaterials" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Course Materials</a>
+    <a href="#regexInterpreter" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">REGEX Interpreter!</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Software Engineering Course Syllabus, Fall 2020</h1>
+  <p class="w3-xlarge">Robert Oliver, Jr.</p>
+  <a href="https://www.cs.lewisu.edu/mathcs/" target="_blank"><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Check out our CompSci page!</button></a>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1><img src="Flyerlogo.png" alt="Flyer Logo" style="float:right" height="100px" width="100px">Software Engineering -44000</h1>
+
+      <!-- I added a <span> tag in order to make the font inside the <pre> tag the same as the rest of the page -->
+      <pre> <span class="inner-pre" style ="font-family: Lato, sans-serif">
+        <b> I.  Instructor Information</b>
+
+            <b>Instructor’s name:</b> Eric Pogue
+            <b>Lewis office location:</b> AS-132-A
+            <b>Office hours:</b> MWF 1-2pm CT by appointment
+            <b>Appointments:</b> Appointments can be requested via email
+            <b>Lewis Phone Number:</b> 563-209-7280 (mobile)
+            <b>Lewis email address:</b> <a href ="mailto:epogue@lewisu.edu" title="Email the professor!">epogue@lewisu.edu</a>
+        </span>
+      </pre>
+      <pre><span class="inner-pre" style ="font-family: Lato, sans-serif">
+        <b> II.  Course Information</b>
+
+            <b>Course:</b> Software Engineering (CPSC-44000-LT1)
+            <b>Course Credit Hours:</b> 3
+            <b>Course description:</b>
+                Methods, strategies, and tools for implementing software systems, particularly as part
+                of a development team. Topics include the software development life cycle, Unified
+                Modeling Language, software testing techniques, software security, open-source
+                development, requirements gathering and documentation, maintenance, and basic
+                software project management.
+        
+            <b>Prerequisites:</b>CPSC-24500 Object-Oriented Programming
+            <b>Course meeting times:</b> MWF 12-12:50am CT from August 31 through December 12th
+            <b>Meeting location:</b> AS 104A
+            <b>Course final:</b> Monday, December 14th from 1:30 to 3:30pm CT
+    </span>
+      </pre>
+  
+<a name="studentLearningOutcomes"></a>
+<h2> Student Learning Outcomes</h2>
+<!-- I added an ordered list for listing the student learning outcomes-->
+<ol>
+    <li> compare and contrast various software process models</li>
+    <li> be able to elicit and analyze requirements of a proposed application</li>
+    <li> write clear and complete requirements documents</li>
+    <li> identify the events to which the software must respond and document them as a set of usecases</li>
+    <li> identify security issues in a software projects requirements and design</li>
+    <li> use techniques to produce self-documenting code</li>
+    <li> use coding strategy to produce secure code</li>
+    <li> draw diagrams to model workflows</li>
+    <li> develop and use diagrams to model classes and the interaction of classes</li>
+    <li> understand and practice unit testing and functional testing    </li>
+    <li> understand the techniques used to test non-functional requirements such as performance andsecurity</li>
+    <li> develop a project schedule</li>
+  </ol>
+    </div>
+
+    <div class="w3-third w3-center">
+        
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+        
+    </div>
+ 
+
+    <div class="w3-twothird">
+        <a name= "courseMaterials"></a>
+      <h1> <img src="lewislogo.png" alt="Lewis Logo" style="float:left">Course Materials</h1>
+      <h5 class="w3-padding-32"> <pre><span class="inner-pre" style ="font-family: Lato, sans-serif">
+     
+
+        <!-- I thought this text should be bigger because of the importance-->
+        <b>Textbook:</b> <i>Fox and Patterson. Engineering Software as a Service: An Agile Approach
+        Using Cloud Computing.</i> ISBN: 978-0984881246.
+        <b>Supplemental readings, videos, online materials:</b> Additional readings, videos, and
+        online materials will be provided.
+
+        <b>Hardware and software requirements:</b> This course requires access to multiple
+        software tools. There are generally available for free but will need to be installed and
+        utilized from a Windows or Macintosh computer.
+
+        <b>Other required materials or costs:</b> During this course we will be setting up and utilizing
+        GitHub and Microsoft Azure accounts. We will be able to complete course assignments
+        utilizing these resources for free or at a very low cost (estimated less than $20). A credit
+        card will be needed to sign up for these accounts.
+        </span>
+        </pre>
+  
+
+        </h5>
+        
+        <!-- <a> is a tag for the NavBar, allowing me to jump to a section on the syllabus-->
+        <a name ="courseSchedule"></a>
+        <h2>Course Schedule</h2>
+        <!-- I made a little table for the course topics-->
+        <table>
+        <tr>
+        <th>Module / Sprint</th>
+        <th>Topics</th>
+        <th>Textbok Readings</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>Introduction to SaaS and Agile Development
+            <br> The Architecture of SaaS Applications
+            <br> Getting Started with Git & GitHub
+            <br> Cloud Computing with Microsoft Azure
+        </td>
+        <td>Chapters 1, 2, A.5, and A.6</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>Ruby Overview
+            <br> Getting Started with Javascript
+            <br> Getting Started with Bootstrap
+            <br> Getting Started with Node.js
+        </td>
+        <td>Chapters 3, 4, and 6</td>
+        </tr>
+        <tr>
+        <td>3</td>
+        <td>Behavior Driven Development
+            <br> Plan and Document Requirements
+            <br> Getting Started with Microsoft Azure and Node.js
+        </td>
+        <td>Chapter 7</td>
+        </tr>
+        <tr>
+        <td>4</td>
+        <td>Testing and Test-Driven-Development
+            <br> HTML, CSS, Javascript, and Bootstrap
+            <br> Azure, Node.js, Javascript, and Express
+        </td>
+        <td>Chapter 8</td>
+        </tr>
+        <tr>
+        <td>5</td>
+        <td>Maintenance, Metrics, and Metrics
+            <br> Agile Requirements & Saas Environment
+            <br> Class Project - Sprint 1
+        </td>
+        <td>Chapter 9</td>
+        </tr>
+        <tr>
+        <td>6</td>
+        <td>Project Management & Scaled Agile
+            <br> Serverless Computing
+            <br> Class Project - Sprint 2
+        </td>
+        <td>Chapter 10</td>
+        </tr>
+        <td>7</td>
+        <td>Design Patterns
+            <br> Software Architecture
+            <br> Class Project - Sprint 3
+        </td>
+        <td>Chpter 11</td>
+        </tr>
+        </tr>
+        <td>8</td>
+        <td>Performance, Releases, Reliability, and Security
+            <br> More Software Architecture
+            <br> Class Project - Sprint 4
+        </td>
+        <td>Chapter 12</td>
+        </tr>
+    
+        </table>
+    
+    </p>
+    </div>
+  </div>
+</div>
+
+<!-- Here is where the regex interpreter is-->
+<a name="regexInterpreter"></a>
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    
+    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+</div>
+
+<!-- Footer where external links to social media platforms are
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ -->
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

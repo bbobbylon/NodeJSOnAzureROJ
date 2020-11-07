@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Pig Dice Game</title>
+
+        <script src="../js/diceRollerROJ.js"></script>
+
+        <link rel="stylesheet" href="../css/dicerollerroj.css">
+
+
+</head>
+<body onload ="rollDice()">
+    <h1>WELCOME TO THE PIG GAME</h1>
+
+    <p>Welcome to the Pig game. Roll Two dice by clicking on "Roll" and make your way to 100! If you roll a 1, you keep the points of that roll, but your total score goes back to 0!</p>
+    First Dice:<input id="dice1" type="text" value="" size="10" disabled><br>
+    Second Dice:<input id="dice2" type="text" value="" size="10" disabled><br>
+    
+    <button type="button" onclick="rollDice()" autofocus >Roll</button>
+
+
+    <p id="backToOne"></p>
+
+
+
+    Running Score: <input id="runningScore"type="text" value="" size="10" disabled><br>
+    Total Score: <input id="totalScore"type="text" value="" size="10" disabled>
+    <button type="button" onclick="scoreKeeper()">Hold</button>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

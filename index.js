@@ -1,12 +1,30 @@
 var http = require('http');
 var url = require('url');
 var dt = require('./datetime');
-
+const expressHandlebars = require('express-handlebars')
+//the below statement grabs the express module to be used 
 var express = require("express"); 
 var app = express(); 
 var path = require("path"); 
 app.use(express.static(__dirname + '/public'))
 var router = express.Router();
+
+
+app.engine('handlebars', expressHandlebars(
+  {
+      defaultLayout: 'main',
+
+}))
+app.set('view engine', 'handlebars')
+
+
+
+//adding some routes
+
+
+
+
+//this is to load the landing page (index.html)
 router.get('/',function(req,res){ 
   
   res.sendFile(path.join(__dirname+'/index.html')); 
@@ -15,8 +33,15 @@ router.get('/',function(req,res){
 
 
 
+//course syllabus route
+app.get('/CourseSyllabus', function (req, res){
+  res.render('coursesyllabus')
+});
 
-
+//dice roller route
+app.get('/DiceRoller', function (req, res){
+  res.render('diceroller')
+});
 /*
 const server = http.createServer((request, response) => {
     // Write the request to the log. 
