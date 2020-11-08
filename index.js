@@ -34,10 +34,9 @@ app.set('view engine', 'handlebars')
 
 
 //this is to load the landing page (index.html)
-app.get('/', (req, res) =>{
-  res.type('text/plain')
-  res.send('Meadowlark Travel');
-})
+app.get('*', (req, res) => {
+  res.sendFile(`index.html`);
+});
 
 //course syllabus route
 app.get('/CourseSyllabus', function (req, res){
