@@ -106,7 +106,7 @@ app.use('/', router);
 
 
 // this is for browsing on a local host (my own computer) const port = process.env.PORT || 1337;
-const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
+var port = process.env.PORT || 8080;  //this is for azure since we are hosting on a cloud server
 
 
  // for browsing on localhost 
