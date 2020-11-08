@@ -34,9 +34,14 @@ app.set('view engine', 'handlebars')
 
 
 //this is to load the landing page (index.html)
-app.get('*', (req, res) => {
-  res.sendFile(`index.html`);
-});
+router.get('/',function(req,res){ 
+  
+  res.sendFile(path.join(__dirname+'/index.html')); 
+  //__dirname : It will resolve to your project folder. 
+}); 
+
+
+
 
 //course syllabus route
 app.get('/CourseSyllabus', function (req, res){
@@ -115,7 +120,7 @@ var port = process.env.PORT || 8080;
  // for browsing on localhost 
 //app.listen(port);
 const server = http.createServer(app);
-app.listen(port, () =>{
+server.listen(port, () =>{
   console.log("Server running at http://localhost:%d", port);
 })
 
