@@ -34,13 +34,10 @@ app.set('view engine', 'handlebars')
 
 
 //this is to load the landing page (index.html)
-router.get('/',function(req,res){ 
-  
-  res.sendFile(path.join(__dirname+'/index.html')); 
-  //__dirname : It will resolve to your project folder. 
-}); 
-
-
+app.get('/', (req, res) =>{
+  res.type('text/plain')
+  res.send('Meadowlark Travel');
+})
 
 //course syllabus route
 app.get('/CourseSyllabus', function (req, res){
