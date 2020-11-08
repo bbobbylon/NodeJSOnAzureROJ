@@ -42,6 +42,12 @@ app.get('/CourseSyllabus', function (req, res){
 app.get('/DiceRoller', function (req, res){
   res.render('diceroller')
 });
+
+//coming soon route for final project
+
+app.get('/ComingSoon' , function (req, res){
+  res.render('comingsoon')
+});
 /*
 const server = http.createServer((request, response) => {
     // Write the request to the log. 
