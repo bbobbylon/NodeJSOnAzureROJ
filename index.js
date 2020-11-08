@@ -1,3 +1,7 @@
+const hostname = process.env.HOST; //for azure since we are hosting via cloud server
+const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
+
+
 var http = require('http');
 var url = require('url');
 var dt = require('./datetime');
@@ -77,10 +81,13 @@ const server = http.createServer((request, response) => {
 */
 
 app.use('/', router);
-const port = process.env.PORT || 1337;
-app.listen(port);
+// this is for browsing on a local host (my own computer) const port = process.env.PORT || 1337;
+ // for browsing on localhost app.listen(port);
+const server = http.createServer(app);
+server.listen(port, hostname, () =>{
+  console.log("Server running at http://localhost:%d", port);
+})
 
-console.log("Server running at http://localhost:%d", port);
 
 
 
