@@ -1,5 +1,5 @@
 const hostname = process.env.HOST; //for azure since we are hosting via cloud server
-const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
+
 
 
 var http = require('http');
@@ -52,6 +52,28 @@ app.get('/DiceRoller', function (req, res){
 app.get('/ComingSoon' , function (req, res){
   res.render('comingsoon')
 });
+
+
+//custom 404 page
+
+app.use((req, res) =>
+{
+    
+    res.status(404)
+    res.render('404')
+})
+
+//custom 500 page
+
+app.use((err, req, res, next)=>
+{
+    console.error(err.message)
+    res.type('text/plain')
+    res.status(500)
+    res.render('500')
+})
+
+
 /*
 const server = http.createServer((request, response) => {
     // Write the request to the log. 
@@ -81,8 +103,14 @@ const server = http.createServer((request, response) => {
 */
 
 app.use('/', router);
+
+
 // this is for browsing on a local host (my own computer) const port = process.env.PORT || 1337;
- // for browsing on localhost app.listen(port);
+const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
+
+
+ // for browsing on localhost 
+ app.listen(port);
 const server = http.createServer(app);
 server.listen(port, hostname, () =>{
   console.log("Server running at http://localhost:%d", port);
