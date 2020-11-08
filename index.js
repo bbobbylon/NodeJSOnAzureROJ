@@ -14,6 +14,15 @@ app.use(express.static(__dirname + '/public'))
 var router = express.Router();
 
 
+
+
+
+var routes = require('./routes/index');
+var users = require('./routes/users');
+app.use('/', routes);
+app.use('/users', users);
+
+
 app.engine('handlebars', expressHandlebars(
   {
       defaultLayout: 'main',
@@ -106,11 +115,13 @@ app.use('/', router);
 
 
 // this is for browsing on a local host (my own computer) const port = process.env.PORT || 1337;
+
+app.set('port', process.env.PORT);
 const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
 
 
  // for browsing on localhost 
-//app.listen(port);
+app.listen(port);
 const server = http.createServer(app);
 server.listen(port, hostname, () =>{
   console.log("Server running at http://localhost:%d", port);
