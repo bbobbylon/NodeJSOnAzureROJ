@@ -1,4 +1,4 @@
-const hostname = process.env.HOST; //for azure since we are hosting via cloud server
+//const hostname = process.env.HOST; //for azure since we are hosting via cloud server
 
 
 
@@ -16,11 +16,6 @@ var router = express.Router();
 
 
 
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-app.use('/', routes);
-app.use('/users', users);
 
 
 app.engine('handlebars', expressHandlebars(
@@ -62,7 +57,7 @@ app.get('/ComingSoon' , function (req, res){
   res.render('comingsoon')
 });
 
-
+/*
 //custom 404 page
 
 app.use((req, res) =>
@@ -81,7 +76,7 @@ app.use((err, req, res, next)=>
     res.status(500)
     res.render('500')
 })
-
+*/
 
 /*
 const server = http.createServer((request, response) => {
@@ -114,16 +109,16 @@ const server = http.createServer((request, response) => {
 app.use('/', router);
 
 
-// this is for browsing on a local host (my own computer) const port = process.env.PORT || 1337;
+// this is for browsing on a local host (my own computer) 
+const port = process.env.PORT || 45530;
 
-app.set('port', process.env.PORT);
-const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
+//const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
 
 
  // for browsing on localhost 
-app.listen(port);
+//app.listen(port);
 const server = http.createServer(app);
-server.listen(port, hostname, () =>{
+server.listen(port, () =>{
   console.log("Server running at http://localhost:%d", port);
 })
 
