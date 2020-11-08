@@ -1,6 +1,6 @@
 //const hostname = process.env.HOST; //for azure since we are hosting via cloud server
 const appInsights = require('applicationinsights');
-appInsights.setup('<instrumentation_key>').start();
+appInsights.setup('4af73365-c777-477a-aebb-7b7bed901ccd').start();
 
 
 var http = require('http');
