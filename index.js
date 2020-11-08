@@ -110,7 +110,7 @@ const port = process.env.PORT;  //this is for azure since we are hosting on a cl
 
 
  // for browsing on localhost 
-app.listen(port);
+//app.listen(port);
 const server = http.createServer(app);
 server.listen(port, hostname, () =>{
   console.log("Server running at http://localhost:%d", port);
