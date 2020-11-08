@@ -115,7 +115,7 @@ var port = process.env.PORT || 8080;
  // for browsing on localhost 
 //app.listen(port);
 const server = http.createServer(app);
-server.listen(port, () =>{
+app.listen(port, () =>{
   console.log("Server running at http://localhost:%d", port);
 })
 
