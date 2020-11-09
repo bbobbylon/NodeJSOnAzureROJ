@@ -1,21 +1,20 @@
 //const hostname = process.env.HOST; //for azure since we are hosting via cloud server
-const appInsights = require('applicationinsights');
-appInsights.setup('4af73365-c777-477a-aebb-7b7bed901ccd').start();
+//const appInsights = require('applicationinsights');
+//appInsights.setup('4af73365-c777-477a-aebb-7b7bed901ccd').start();
 
 
-var http = require('http');
-var url = require('url');
-var dt = require('./datetime');
+//var http = require('http');
+//var url = require('url');
+//var dt = require('./datetime');
 const expressHandlebars = require('express-handlebars')
 //the below statement grabs the express module to be used 
 var express = require("express"); 
-var app = express(); 
-var path = require("path"); 
+const app = express(); 
 app.use(express.static(__dirname + '/public'))
 var router = express.Router();
 
 
-
+var path = require("path"); 
 
 
 
@@ -28,18 +27,21 @@ app.set('view engine', 'handlebars')
 
 
 
+
+
+
 //adding some routes
-
-
 app.get('/', (req, res) => res.render('home'))
-/*this is to load the landing page (index.html)
+
+
+//this is to load the landing page (index.html)
 router.get('/',function(req,res){ 
   
   res.sendFile(path.join(__dirname+'/index.html')); 
   //__dirname : It will resolve to your project folder. 
 }); 
 
-*/
+
 
 
 
@@ -70,7 +72,9 @@ app.get('/BrownTutorial' , function (req, res){
 app.get('/MyFavoriteHobby' , function (req, res){
   res.render('myfavoritehobby')
 });
-/*
+
+
+
 //custom 404 page
 
 app.use((req, res) =>
@@ -89,48 +93,17 @@ app.use((err, req, res, next)=>
     res.status(500)
     res.render('500')
 })
-*/
-
-/*
-const server = http.createServer((request, response) => {
-    // Write the request to the log. 
-    console.log(request);
-
-    // Standard Hello World.
-    response.writeHead(200, {'Content-Type': 'text/html'});
-    response.write('<h3>Hello World!</h3>')
-
-    // Access funcion from a separate JavaScript module.
-    response.write("The date and time are currently: " + dt.myDateTime() + "<br><br>");
-
-    // Show the url. 
-    response.write("req.url="+request.url+"<br><br>");
-
-    // Suggest adding something tl the url so that we can parse it. 
-    response.write("Consider adding '/test?year=2017&month=July' to the URL.<br><br>");
-    var q = url.parse(request.url, true).query;
-    var txt = q.year + " " + q.month;
-    response.write("txt="+txt);
-
-    // Close the response
-    response.end('<h3>The End.</h3>');
-});
 
 
-*/
 
-app.use('/', router);
+
+//app.use('/', router);
+
 
 
 // this is for browsing on a local host (my own computer) 
-var port = process.env.PORT || 8080;
-
-//const port = process.env.PORT;  //this is for azure since we are hosting on a cloud server
-
-
- // for browsing on localhost 
-//app.listen(port);
-const server = http.createServer(app);
+const port = process.env.PORT || 8080;
+//const server = http.createServer(app);
 server.listen(port, () =>{
   console.log("Server running at http://localhost:%d", port);
 })
