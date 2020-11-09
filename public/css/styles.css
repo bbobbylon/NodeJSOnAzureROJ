@@ -1,0 +1,13 @@
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+  text-align:center;
+}
+p {
+  border: 2px solid blue;
+  margin: 50px;
+  color:red;
+  font-family: verdana;
+}

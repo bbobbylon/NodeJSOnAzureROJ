@@ -31,10 +31,7 @@ app.set('view engine', 'handlebars')
 //adding some routes
 
 
-app.get('/', (req, res) =>{
-  res.render('home')
-})
-
+app.get('/', (req, res) => res.render('home'))
 /*this is to load the landing page (index.html)
 router.get('/',function(req,res){ 
   
@@ -63,6 +60,16 @@ app.get('/ComingSoon' , function (req, res){
   res.render('comingsoon')
 });
 
+
+app.get('/BrownTutorial' , function (req, res){
+  res.render('browntutorial')
+});
+
+
+
+app.get('/MyFavoriteHobby' , function (req, res){
+  res.render('myfavoritehobby')
+});
 /*
 //custom 404 page
 
